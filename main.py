@@ -42,12 +42,23 @@ def math_push_url_code(url):
 
 lock = threading.Lock()
 
+logo = '''   ___       _                         
+  / _ \     | |                        
+ | | | | ___| |__   ___ _ __   ___ ___ 
+ | | | |/ __| '_ \ / _ \ '_ \ / __/ __|
+ | |_| | (__| | | |  __/ | | | (_| (__ 
+  \___/ \___|_| |_|\___|_| |_|\___\___|          
+Github Page:https://github.com/0chencc
+More Details:https://github.com/0Chencc/DouyinLiveFlowCatch
+LICENSE:GPL-3.0
+'''
 
 class Proxy:
     def __init__(self):
         if not is_admin():
             ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
         current_path = os.path.dirname(os.path.abspath('main.py'))
+        print(logo)
         print(f'文件运行目录:{current_path}')
         print(f'文件所在目录:{sys.path[0]}')
         print('已开始捕获推流，代理端口为：8080')
